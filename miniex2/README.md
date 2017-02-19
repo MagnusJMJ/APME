@@ -9,7 +9,7 @@ axis, producing a mesmerizing visual that slightly resembles the SBBOD. If the
 mouse button is held down, the program will slow to a grinding halt. If the button
 is released, the program will slowly recover and go back to normal.
 
-[!screenshot](https://github.com/MagnusJMJ/APME/blob/master/miniex2/screenshot.gif)
+![screenshot](https://github.com/MagnusJMJ/APME/blob/master/miniex2/screenshot.gif)
 
 ### The coding process
 The process was marked by a distinct lack of experience, as even the simplest
