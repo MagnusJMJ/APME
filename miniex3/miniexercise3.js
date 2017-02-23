@@ -1,6 +1,6 @@
-function planet(speed, distance, size, color) { // the template planet
-  var rot = 360/speed*(frameCount%speed);
-  rotate(radians(rot));
+function planet(speed, distance, size, color) { // the template planet.
+  var rot = 360/speed*(frameCount%speed);       // NB: the speed parameter is inverted!
+  rotate(radians(rot));                         // (higher value -> slower speed)
   fill(color);
   ellipse(0, distance, size, size);
 }
