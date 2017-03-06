@@ -8,3 +8,5 @@
 [miniex3 - Planetary Throbber](https://rawgit.com/MagnusJMJ/APME/master/miniex3/index.html)
 
 [miniex4 - Speedball](https://rawgit.com/MagnusJMJ/APME/master/miniex4/index.html)
+
+Each program's respective folder contains an in-depth explanation along with all assets and source-code.
