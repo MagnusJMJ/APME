@@ -1,4 +1,4 @@
-# [Planetary Throbber](https://rawgit.com/MagnusJMJ/APME/master/miniex3/index.html)
+# [Planetary Throbber](https://magnusjmj.github.io/APME/miniex3)
 ![Screenshot](https://github.com/MagnusJMJ/APME/blob/master/miniex3/planetaryThrobber.png)
 
 ### The program
