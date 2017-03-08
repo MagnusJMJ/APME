@@ -1,4 +1,4 @@
-# [The Spinning Beachball of Death v2: Alignment Boogaloo](https://rawgit.com/MagnusJMJ/APME/master/miniex2/index.html)
+# [The Spinning Beachball of Death v2: Alignment Boogaloo](https://magnusjmj.github.io/APME/miniex2)
 ---
 This program is inspired by the infamous *Spinning Beachball of Death*, as known
 and feared by many users of OSX. This is because the SBBOD
