@@ -1,4 +1,4 @@
-# [Speedball](https://rawgit.com/MagnusJMJ/APME/master/miniex4/index.html)
+# [Speedball](https://magnusjmj.github.io/APME/miniex4)
 ![Screenshot](https://github.com/MagnusJMJ/APME/blob/master/miniex4/speedball.png)
 
 ### The Negative Feedback Loop
