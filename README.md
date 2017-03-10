@@ -9,4 +9,6 @@
 
 [miniex4 - Speedball](https://magnusjmj.github.io/APME/miniex4)
 
+[miniex5 - The John Doe Obituary Generator](https://magnusjmj.github.io/APME/miniex5/)
+
 Each program's respective folder contains an in-depth explanation along with all assets and source-code.
