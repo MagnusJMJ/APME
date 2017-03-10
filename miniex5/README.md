@@ -8,6 +8,7 @@ Before I started writing the actual program, I'd determined that I wanted to exp
  * Objects (as opposed to simple values)
  * Constructor functions (for making objects)
  * Arrays (for storing the objects)
+ 
 When I first started reading up on objects, there was a recurring theme in the example code I found: The example object was 
 often a person, a 'John Doe'.
 ```
