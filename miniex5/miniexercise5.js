@@ -3,8 +3,8 @@ var frenchLily, firstNames, lastNames, causeGen, grammar, people;
 function preload() {
   frenchLily = loadImage('assets/frenchlily.png');
   firstNames = loadStrings('assets/names1.txt');
-  lastNames = loadStrings('assets/names2.txt');
-  causeGen = loadStrings('assets/causeGen.json');
+  lastNames  = loadStrings('assets/names2.txt');
+  causeGen   = loadStrings('assets/causeGen.json');
   console.log('Preload, check!');
 }
 
