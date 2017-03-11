@@ -77,7 +77,7 @@ function Person() {
   this.firstName = firstNames[round(random(firstNames.length - 1))];
   this.lastName  = lastNames[round(random(lastNames.length - 1))];
   this.age       = round(random(100));
-  this.death     = round(random(1800, 2017));
+  this.death     = round(random(2000, 2017));
   this.birth     = this.death - this.age;
   this.cause     = grammar.expand();
 }
