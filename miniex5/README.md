@@ -1,7 +1,7 @@
 # [The John Doe Obituary Generator](https://magnusjmj.github.io/APME/miniex5/)
 ![screenshot](https://github.com/MagnusJMJ/APME/blob/master/miniex5/obituarygenerator.png)
 ---
-The John Doe Obituary Generator is exactly what it says on the tin. It generates obituaries for the average guy and gal, the John and Jane Doe - but with very unusual causes of death. Every person on the list is a composite of a random selection among the 100 most common first names and 100 most common last names in the United States. They each have a random year of birth (and death) sometime within the last three centuries. The only thing unusual about them is their death. In fact, most of them are fairly absurd and in poor taste.
+The John Doe Obituary Generator is exactly what it says on the tin. It generates obituaries for the average guy and gal, the John and Jane Doe - but with very unusual causes of death. Every person on the list is a composite of a random selection among the 100 most common first names and 100 most common last names in the United States. They each have a random year of birth (and death) sometime within the last century. The only thing unusual about them is their death. In fact, most of them are fairly absurd and in poor taste.
 
 ### Writing the program and implementing RiTa.js
 Before I started writing the actual program, I'd determined that I wanted to experiment with three concepts:
