@@ -43,7 +43,7 @@ function draw() {
   ticker++;
 }
 
-// starts and stops the simulation
+// this function starts and stops the simulation
 function toggle() {
   if (isLooping) {
     noLoop();
@@ -56,7 +56,7 @@ function toggle() {
   isLooping = !isLooping;
 }
 
-// clears the grid
+// this function clears the grid
 function killAll() {
   noLoop();
   for (i = 0; i < cells.length; i++) {
