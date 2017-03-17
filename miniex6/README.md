@@ -11,5 +11,7 @@ on their own, according to these four simple laws:
  * Any live cell with less than two live neighbours dies, as if by loneliness.
  * Any live cell with two or three live neighbours survives to the next generation.
  * Any dead cell with exactly three live neighbours comes alive, as if by reproduction.
- 
 Though the rules are simple, they can generate complex patterns. Try to experiment with different patterns and shapes!
+
+### Generativity
+ahhhhh
