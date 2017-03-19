@@ -20,8 +20,8 @@ function setup() {
   button2.mousePressed(killAll);
 
   makeCells();
-
-  assignNeighbours();
+  assignNeighbours();  
+  loadPreset();
 }
 
 function draw() {
@@ -30,11 +30,8 @@ function draw() {
   rect(0, 0, 199, 39);
 
   countNeighbours();
-
   applyRules();
-
   advanceIteration();
-
   drawIteration();
 
   // draws iteration/frame count
@@ -189,6 +186,16 @@ function mousePressed() {
         cells[i].draw();
         break; // NB: break; makes sure the loop stops when the clicked cell is found
       }
+    }
+  }
+}
+
+// this function initializes a random preset on start-up
+function loadPreset() {
+  for (i = 0; i < cells.length; i++) {
+    var ran = random();
+    if (ran > 0.8) {
+      cells[i].alive = true;
     }
   }
 }
