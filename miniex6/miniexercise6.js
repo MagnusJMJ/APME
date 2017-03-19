@@ -8,7 +8,6 @@ function setup() {
   frameRate(10);
   textAlign(CENTER, CENTER);
   noStroke();
-  noLoop();
 
   // buttons, man
   var button1, button2;
@@ -22,6 +21,8 @@ function setup() {
   makeCells();
   assignNeighbours();  
   loadPreset();
+    
+  noLoop();
 }
 
 function draw() {
