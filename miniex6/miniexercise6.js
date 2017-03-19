@@ -57,6 +57,7 @@ function toggle() {
 // this function clears the grid
 function killAll() {
   noLoop();
+  isLooping = false;
   for (i = 0; i < cells.length; i++) {
     cells[i].alive = false;
     cells[i].next  = false;
