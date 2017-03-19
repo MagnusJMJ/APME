@@ -13,5 +13,11 @@ on their own, according to these four simple laws:
  * Any dead cell with exactly three live neighbours comes alive, as if by reproduction.
 Though the rules are simple, they can generate complex patterns. Try to experiment with different patterns and shapes!
 
-### Generativity
-ahhhhh
+### Generativity in The Game of Life
+The Game of Life can be seen as a simple A-life simulator. Cells can be dependent on each other for survival, or reproduction can snowball
+and cause massive extinction. Most of the time, patterns either devolve entirely and 'go extinct', fall into a pertetual cycle, or freeze
+in a stable pattern. One of the things that makes GoL so interesting is that it is a textbook demonstration that complex patterns and
+systems can arise from simple rules. Unless you do the math before-hand, predicting the outcome of a given pattern of cells is pretty
+difficult, and that gives the simulation an unpredictable quality. On the other hand, when people _have_ done the math, they've made some
+very impressive things in the process. In that sense, the answer to the question of authorship seems to float between the simulation and
+the user deciding the "input" state of the system, depending on the level of calculation and intent from the user's side.
