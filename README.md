@@ -13,4 +13,6 @@
 
 [miniex6 - Conway's Game of Life](https://magnusjmj.github.io/APME/miniex6)
 
+[miniex7 - Maze of Progress](https://magnusjmj.github.io/APME/miniex7)
+
 Each program's respective folder contains an in-depth explanation along with all assets and source-code.
