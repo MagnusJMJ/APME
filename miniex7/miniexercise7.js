@@ -1,32 +1,33 @@
-var res      = 50, // Resolution of the maze.
-    widthVal = res + 35 + 'px'; // Converts res to a string CSS can understand.
-                                // NB: We add '35' to make the progress bars
-                                // overlap, but this number would need to be
-                                // changed manually to fit a new resolution.
+var res      = 50,
+    arr      = [],
+    widthVal = res + 35 + 'px';
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  // The only reason we have a p5 canvas here is because
-  // the variables 'width' and 'height' rely on it. The
-  // background color is set with CSS in index.html to
-  // avoid white borders.
-
-  // Let's make a two-dimensional array!
-  var arr = [];
   for (x = 0; x < width/res; x++) {
     arr[x] = [];
     for (y = 0; y < height/res; y++) {
-      // Each item in the 2D array is a progress-bar.
-      // Each bar has a 50/50 chance of being rotated
-      // 45° clockwise or counter-clockwise.
       arr[x][y] = createElement('progress');
       arr[x][y].attribute('value', '1');
-      arr[x][y].style('width', widthVal);
+      arr[x][y].mousePressed(change);
       arr[x][y].position(x*res, y*res);
-      var coinflip = round(random());
-      if (coinflip) {
-        arr[x][y].style('transform', 'rotate(45deg)');
-      } else {
-        arr[x][y].style('transform', 'rotate(-45deg)');
+      arr[x][y].style('width', widthVal);
+      arr[x][y].style('transform', coinflip('rotate(45deg)', 'rotate(-45deg)'))
+    }
+  }
+}
+function coinflip(heads, tails) {
+  var coin = round(random());
+  if (coin) { return heads; }
+  else      { return tails; }
+}
+function change() {
+  this.style('transform', coinflip('rotate(45deg)', 'rotate(-45deg)'));
+}
+function keyPressed() {
+  if (keyCode == 32) {
+    for (x = 0; x < arr.length; x++) {
+      for (y = 0; y < arr[x].length; y++) {
+        arr[x][y].style('transform', coinflip('rotate(45deg)', 'rotate(-45deg)'));
       }
     }
   }
