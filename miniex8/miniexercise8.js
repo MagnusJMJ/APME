@@ -1,10 +1,12 @@
 /*
 Daniel Shiffman's fractal tree (recursion demo).
+
 There are several versions, but this one uses an
 array of "branch" objects (and a constructor
 function) as a means of structuring the program.
 
 NOTE: MY CHANGES
+- moved constructor function to sketch file
 - preference edits
   - changed certain variable names
   - changed some structure in how branching works
@@ -15,7 +17,7 @@ NOTE: MY CHANGES
 
 var tree   = [],
     leaves = [],
-    count  = 0,
+    ticker  = 0,
     slider,
     rot;
 
@@ -35,15 +37,15 @@ function setup() {
 function keyPressed() {
   if (keyCode == 32) {
     for (i = tree.length-1; i >= 0; i--) {
-      if (!tree[i].grown && count < 10) {
+      if (!tree[i].grown && ticker < 5) {
         tree.push(tree[i].branch(rot));
         tree.push(tree[i].branch(-rot));
       }
       tree[i].grown = true;
     }
-    count++;
+    ticker++;
 
-    if (count === 10) {
+    if (ticker == 5) {
       for (i = 0; i < tree.length; i++) {
         if (!tree[i].grown) {
           var leaf = tree[i].to.copy();
