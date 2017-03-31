@@ -15,4 +15,6 @@
 
 [miniex7 - Maze of Progress](https://magnusjmj.github.io/APME/miniex7)
 
+[miniex8 - Rock, Paper, Scissors](https://magnusjmj.github.io/APME/miniex8)
+
 Each program's respective folder contains an in-depth explanation along with all assets and source-code.
