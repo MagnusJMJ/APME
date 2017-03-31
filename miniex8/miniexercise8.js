@@ -1,97 +1,122 @@
-/*
-Daniel Shiffman's fractal tree (recursion demo).
+// Declaring global variables (mostly links to DOM elements).
+var myChoice,
+    oppChoice,
+    result,
+    initial  = document.getElementById('initialState'),
+    rock     = document.getElementById('rock'),
+    paper    = document.getElementById('paper'),
+    scissors = document.getElementById('scissors'),
+    resolved = document.getElementById('resolvedState'),
+    retry    = document.getElementById('retryButton'),
+    throbber = document.getElementById('throbber');
 
-There are several versions, but this one uses an
-array of "branch" objects (and a constructor
-function) as a means of structuring the program.
+// Linking functions to click events.
+rock.addEventListener('click', choseRock);
+paper.addEventListener('click', chosePaper);
+scissors.addEventListener('click', choseScissors);
+retry.addEventListener('click', tryAgain);
 
-NOTE: MY CHANGES
-- moved constructor function to sketch file
-- preference edits
-  - changed certain variable names
-  - changed some structure in how branching works
-  - spacing/indentation changes
-- added functionality
-  - ???
-*/
-
-var tree   = [],
-    leaves = [],
-    ticker  = 0,
-    slider,
-    rot;
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-
-  slider = createSlider(0, PI, PI/4, 0.001);
-  slider.position(20, 20);
-  slider.style('width', '120px');
-
-  var trunkA = createVector(width/2, height),
-      trunkB = createVector(width/2, height/1.5);
-
-  tree.push(new Branch(trunkA, trunkB, 5));
+/* Which function is called depends which button is
+pressed. The called function sets the player choice
+and initiates the game. */
+function choseRock() {
+  console.log('You chose rock.');
+  myChoice = 0;
+  startGame();
+}
+function chosePaper() {
+  console.log('You chose paper.');
+  myChoice = 1;
+  startGame();
+}
+function choseScissors() {
+  console.log('You chose scissors.');
+  myChoice = 2;
+  startGame();
 }
 
-function keyPressed() {
-  if (keyCode == 32) {
-    for (i = tree.length-1; i >= 0; i--) {
-      if (!tree[i].grown && ticker < 5) {
-        tree.push(tree[i].branch(rot));
-        tree.push(tree[i].branch(-rot));
-      }
-      tree[i].grown = true;
-    }
-    ticker++;
+/* startGame() actually just shows a throbber
+for a random duration between 1 and 2 seconds */
+function startGame() {
+  initial.style.display  = 'none';
+  throbber.style.display = 'inline-block';
 
-    if (ticker == 5) {
-      for (i = 0; i < tree.length; i++) {
-        if (!tree[i].grown) {
-          var leaf = tree[i].to.copy();
-          leaves.push(leaf);
-        }
-      }
-    }
-  }
+  var wait = 1000 + Math.random() * 1000
+  setTimeout(resolve, wait);
 }
 
-function draw() {
-  background(28, 147, 216, 150);
-  rot = slider.value();
+/* resolve() randomly chooses a hand for the
+"opponent" and decides who wins.
+(the result variable) */
+function resolve() {
+  // Choose opponent hand.
+  oppChoice = Math.round(Math.random() * 2);
+  var oc = ['rock.', 'paper.', 'scissors.'];
+  console.log('Opponent chose ' + oc[oppChoice]);
 
-  for (i = 0; i < tree.length; i++) {
-    tree[i].show();
+  //Decides who won.
+  if (myChoice == oppChoice) {
+    console.log('You tied!');
+    result = 2;
+  } else if (myChoice == oppChoice + 1 || myChoice == oppChoice - 2) {
+    console.log('You won!');
+    result = 1;
+  } else {
+    console.log('You lost!');
+    result = 0;
   }
 
-  for (i = 0; i < leaves.length; i++) {
-    fill(60, 181, 16, 100);
-    noStroke();
-    var rnd = random(5, 25);
-    ellipse(leaves[i].x, leaves[i].y, rnd, rnd);
-    leaves[i].x += random(-0.5, 0.5);
-    leaves[i].y += random(0, 2);
-  }
-
+  // Moves on.
+  showResult();
 }
-function Branch(from, to, thickness) {
-  this.from = from;
-  this.to = to;
-  this.thickness = thickness;
-  this.grown = false;
 
-  this.show = function() {
-    stroke(140, 116, 88);
-    strokeWeight(this.thickness)
-    line(this.from.x, this.from.y, this.to.x, this.to.y);
+// Shows the result and what hands were chosen.
+function showResult() {
+  // More variables that refer to the DOM.
+  var header  = document.getElementById('resolvedHeader'),
+      myHand  = document.getElementById('myChoice'),
+      oppHand = document.getElementById('oppChoice');
+
+  // This switch shows the appropriate header.
+  // The colours are default CSS colours.
+  switch (result) {
+    case 0:
+      header.innerHTML   = 'You lost!';
+      header.style.color = 'crimson';
+      break;
+    case 1:
+      header.innerHTML   = 'You won!';
+      header.style.color = 'YellowGreen';
+      break;
+    case 2:
+      header.innerHTML   = 'You tied!';
+      header.style.color = 'White';
+      break;
   }
 
-  this.branch = function(angle) {
-    var dir = p5.Vector.sub(this.to, this.from);
-    dir.rotate(angle);
-    dir.mult(0.67);
-    var newTo = p5.Vector.add(this.to, dir);
-    var newBranch = new Branch(this.to, newTo, this.thickness*0.8);
-    return newBranch;
+  // This switch shows which hand you picked.
+  switch (myChoice) {
+    case 0: myHand.setAttribute('src', 'assets/rock.png');     break;
+    case 1: myHand.setAttribute('src', 'assets/paper.png');    break;
+    case 2: myHand.setAttribute('src', 'assets/scissors.png'); break;
   }
+
+  // This switch shows which hand the opponent picked.
+  switch (oppChoice) {
+    case 0: oppHand.setAttribute('src', 'assets/rock.png');     break;
+    case 1: oppHand.setAttribute('src', 'assets/paper.png');    break;
+    case 2: oppHand.setAttribute('src', 'assets/scissors.png'); break;
+  }
+
+  // Now that the result screen is 'ready', we'll show it.
+  throbber.style.display = 'none';
+  resolved.style.display = 'inline-block';
+}
+
+// Resets the game.
+function tryAgain() {
+  resolved.style.display = 'none';
+  initial.style.display  = 'inline-block';
+
+  console.log('New round.');
 }
