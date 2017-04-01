@@ -6,7 +6,23 @@ In the beginning, I wanted to base this mini-exercise on Daniel Shiffman's codin
 involving fractal trees. However, I ended up making this instead - a simple game of Rock,
 Paper, Scissors, played against the computer. I made the switch mainly because I thought
 it would be an interesting thing to code, and also because it is considerably easier
-to illustrate in a flowchart than a recursively defined tree...
+to illustrate in a flowchart than a recursively defined tree. Something to keep in mind
+when reading the code is that I've put *much* more emphasis on HTML and CSS than the exercise
+calls for, and also chosen to completely cut out libraries. This means that everything is
+100% native JS/HTML/CSS, but also that you really have to read the HTML/CSS in addition
+to the JS to get the full picture. Because we haven't really been taught HTML/CSS, I'll outline
+what's going on here:
+ * **index.html** contains all the content that is shown on the page. Text, images, you name it.
+ These are the same kinds of elements we worked with in miniex7, except this time I've hardcoded
+ them in the HTML-file.
+ * **miniexercise8.js** is responsible for the *scripting*. It manipulates the DOM and decides
+ what happens. The only way I've used JavaScript differently for this exercise is that I've mostly
+ detached it from the visuals and changed those with CSS instead, which brings us to:
+ * **style.css** is solely responsible for styling the DOM elements. Technically the sketch would
+ work fine without the stylesheet, but it would be ugly default HTML. CSS makes complex styling (like
+ gradual colour/scale change when hovering the cursor over an element) stupidly easy! In this sense,
+ CSS is a very powerful tool. Some of the styling I've included in the stylesheet would be complex
+ and code-heavy to implement with just JavaScript.
 
 ### The challenges
 While I was still working with the fractal tree script, it really dawned on me just how
