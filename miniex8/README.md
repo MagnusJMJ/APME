@@ -32,4 +32,4 @@ _"how I would've written it"._ In addition, I had considerable issues not frying
 like a wet electrical circuit trying to wrap my head around recursive functions...
 
 ### The flowchart
-_Coming soon!_
+![Screenshot](https://github.com/MagnusJMJ/APME/blob/bcfd44dc44306824c4f78afae42d43e36fd12fb9/miniex8/flowchart.png)
