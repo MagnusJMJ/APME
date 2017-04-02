@@ -50,7 +50,7 @@ function startGame() {
 (the result variable) */
 function resolve() {
   // Choose opponent hand.
-  oppChoice = Math.round(Math.random() * 2);
+  oppChoice = Math.floor(Math.random() * 3);
   var oc = ['rock.', 'paper.', 'scissors.'];
   console.log('Opponent chose ' + oc[oppChoice]);
 
