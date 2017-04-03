@@ -53,7 +53,7 @@ h1 {
 }
 
 input {
-  opacity: .75;
+  opacity: 1;
   transform: scale(.3, .3);
   transition: opacity .25s, transform .25s;
 }
@@ -63,7 +63,7 @@ element in question when it is hovered
 over with the cursor. */
 
 input:hover {
-  opacity: 1;
+  opacity: .75;
   transform: scale(.33, .33);
 }
 
