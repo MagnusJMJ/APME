@@ -2,6 +2,7 @@
 var myChoice,
     oppChoice,
     result,
+    hand     = ['rock.', 'paper.', 'scissors.'],
     initial  = document.getElementById('initialState'),
     rock     = document.getElementById('rock'),
     paper    = document.getElementById('paper'),
@@ -11,35 +12,21 @@ var myChoice,
     throbber = document.getElementById('throbber');
 
 // Linking functions to click events.
-rock.addEventListener('click', choseRock);
-paper.addEventListener('click', chosePaper);
-scissors.addEventListener('click', choseScissors);
+rock.addEventListener('click', function() { startGame(0); });     // NB: We have to put startGame()
+paper.addEventListener('click', function() { startGame(1); });    // in an anonymous function or the
+scissors.addEventListener('click', function() { startGame(2); }); // script goes batshit. Why? No idea.
 retry.addEventListener('click', tryAgain);
 
-/* Which function is called depends which button is
-pressed. The called function sets the player choice
-and initiates the game. */
-function choseRock() {
-  console.log('You chose rock.');
-  myChoice = 0;
-  startGame();
-}
-function chosePaper() {
-  console.log('You chose paper.');
-  myChoice = 1;
-  startGame();
-}
-function choseScissors() {
-  console.log('You chose scissors.');
-  myChoice = 2;
-  startGame();
-}
-
-/* startGame() actually just shows a throbber
-for a random duration between 1 and 2 seconds */
-function startGame() {
+/* startGame() sets the variable myChoice
+according to which button was pressed by
+the player and displays a throbber for 1
+to 2 seconds to create ~suspense~ */
+function startGame(input) {
   initial.style.display  = 'none';
   throbber.style.display = 'inline-block';
+
+  myChoice = input;
+  console.log('You chose ' + hand[myChoice]);
 
   var wait = 1000 + Math.random() * 1000
   setTimeout(resolve, wait);
@@ -51,8 +38,7 @@ function startGame() {
 function resolve() {
   // Choose opponent hand.
   oppChoice = Math.floor(Math.random() * 3);
-  var oc = ['rock.', 'paper.', 'scissors.'];
-  console.log('Opponent chose ' + oc[oppChoice]);
+  console.log('Opponent chose ' + hand[oppChoice]);
 
   //Decides who won.
   if (myChoice == oppChoice) {
