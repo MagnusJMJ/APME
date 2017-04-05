@@ -103,6 +103,5 @@ function showResult() {
 function tryAgain() {
   resolved.style.display = 'none';
   initial.style.display  = 'inline-block';
-
   console.log('New round.');
 }
