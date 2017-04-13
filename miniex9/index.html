@@ -2,14 +2,23 @@
 <head>
   <title> miniex9 - TBD </title>
   <meta charset="UTF-8">
+  <!-- stylesheet -->
+  <link type="text/css" rel="stylesheet" href="style.css">
   <!-- libraries -->
-  <script language="javascript" src="libraries/p5.js"></script>
-  <script language="javascript" src="libraries/p5.dom.js"></script>
-  <script language="javascript" src="libraries/p5.sound.js"></script>
-  <script language="javascript" src="libraries/rita.js"></script>
-  <script language="javascript" src="libraries/jquery.js"></script>
-  <!-- sketch source code -->
-  <script language="javascript" src="miniexercise9.js"></script>
-  <style> body {padding: 0; margin: 0;} </style>
+  <script type="text/javascript" src="libraries/p5.js"></script>
+  <script type="text/javascript" src="libraries/p5.dom.js"></script>
+  <script type="text/javascript" src="libraries/p5.sound.js"></script>
+  <script type="text/javascript" src="libraries/rita.js"></script>
+  <script type="text/javascript" src="libraries/jquery.js"></script>
 </head>
+<body>
+  <h1>Test.</h1>
+  <div id="content">
+    <h4>What would you like to know?</h4>
+    <input id="textfield" type="text" name="input" value="What is the circumference of Jupiter?">
+    <button type="button" onclick="fetchResult()">Ask the omniscient 8-Ball!</button>
+  </div>
+  <!-- The actual script is loaded last to ensure that it can access all the HTML elements.-->
+  <script type="text/javascript" src="miniexercise9.js"></script>
+</body>
 </html>
