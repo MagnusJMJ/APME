@@ -1,5 +1,4 @@
 # Aesthetic Programming Mini Exercises
----
 This repository contains all the programs I have submitted for my weekly mini-exercises as part of the Aesthetic Programming course at the University of Aarhus, spring-semester of 2017.
 
 ### Shortcuts to each program
