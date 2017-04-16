@@ -23,7 +23,7 @@ function fetchResult() {
       document.getElementById('content').innerHTML = '<p id="response">' + this.responseText + '</p>';
     }
   }
-  xhr.open('GET', 'http://api.wolframalpha.com/v1/result?appid=DEMO&i=How+far+is+Los+Angeles+from+New+York%3f&units=metric', true);
+  xhr.open('GET', 'https://api.wolframalpha.com/v1/result?appid=DEMO&i=How+far+is+Los+Angeles+from+New+York%3f&units=metric', true);
   xhr.send();
   console.log('request sent');
 }
