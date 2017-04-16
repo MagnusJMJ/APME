@@ -106,6 +106,9 @@ files to get a sense of what's going on. Certainly helped when I wrote it!).
             document.getElementById('output').innerHTML = this.responseText + '.';
           }
         };
+        xhr.onerror = function() {
+          throw 'The Professor did not understand your question.'
+        };
       }
 
     </script>
