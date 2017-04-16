@@ -1,0 +1,113 @@
+
+<!--
+NOTE: This mini-exercise turned out a tad short for me, code-wise. That is why I've
+chosen to keep everything in a single file. This means that the Javascript and CSS
+that would normally be in their own files, is included directly in the HTML-document,
+in <script> and <style> tags, respectively. This might make the code a little harder
+to read (or maybe easier - the plus-side is that you won't have to alt-tab between
+files to get a sense of what's going on. Certainly helped when I wrote it!).
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Look Mom! No libraries! -->
+    <title>miniex9 - Omniscient Professor</title>
+    <meta charset='UTF-8'>
+
+    <!-- Here be CSS! Think of this as visual settings/options for HTML elements. -->
+    <style>
+
+      * { /* The asterisk (*) is a universal selector - rules in these tags apply to everything. */
+        font-family: Helvetica, sans-serif;
+        text-align: center;
+        color: #896A67;
+        animation: fadein 1s;
+      }
+
+      @keyframes fadein { /* Still not sure what this does, but it's definitely necessary. */
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      :not(script, style) { /* Applies to all elements that are NOT <script> or <style> */
+        display: inline-block;
+      }
+
+      body { /* 'Normal' selector - applies to this type of element */
+        background-color: #DDC8C4;
+        padding: 0;
+        margin: 0;
+      }
+
+      input {
+        background-color: #EFF9F0;
+        width: 250px;
+      }
+
+      p {
+        opacity: .8;
+      }
+
+      #question { /* #-selector - only applies to the element with this ID */
+        font-weight: bold;
+      }
+
+      button {
+        background-color: #DDC8C4;
+        transition: color .25s, background-color .25s;
+      }
+
+      button:hover { /* applies to button elements only when hovered over with the cursor! */
+        color: #EFF9F0;
+        background-color: #6B4D57;
+      }
+
+      img {
+        transform: scale(.3, .3);
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      /* CSS is f*cking sweet though, very powerful tool when working with HTML. */
+    </style>
+  </head>
+  <body>
+
+    <!-- Yeah my dude, let's make some elements -->
+    <h1>Ask the omniscient professor a question!</h1>
+    <p>He prefers questions with short and factual answers, though.</p>
+    <input id='input' value=''>
+    <button onclick='fetchAnswer()'>Ask the Professor</button>
+    <p id='question'></p>
+    <p id='output'></p>
+    <img src='http://vignette3.wikia.nocookie.net/scribblenauts/images/b/b1/Professor.png/revision/latest?cb=20130202214922'>
+    <!-- And I'm not talking about earth wind and fire, haha knowhatimsayin? -->
+
+    <!-- Here be JavaScript! Think of this as any other 'miniex.js', but copy-pasted into the index file -->
+    <script>
+
+      function fetchAnswer() {
+        var hack    = 'https://crossorigin.me/', // "The magnitude of this hack compares favorably with that of the national debt".
+            url     = 'https://api.wolframalpha.com/v1/result', // The URL of the API we want to access.
+            query   = document.getElementById('input').value.replace(/ /g, '+').replace('?', '%3F'), // Voodoo-magic that fetches the value of the textbox and makes spaces and ?'s URL-friendly.
+            key     = 'J3G5WY-T52G28X6X8', // My personal API key.
+            request = hack + url + '?i=' + query + '&appid=' + key, // stitched together URL that we use to actually make the request.
+            xhr     = new XMLHttpRequest(); // Because this particular API does not return results in JSON, we make an XMLHttpRequest instead of using loadJSON() or JSON.parse().
+
+        // this is where we actually send the request to the API. (This way of requesting things from websites is called AJAX and it seems pretty dope)
+        xhr.open('GET', request, true);
+        xhr.send();
+
+        // This function makes sure the response is done loading before we display it.
+        xhr.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('question').innerHTML = document.getElementById('input').value;
+            document.getElementById('output').innerHTML = this.responseText + '.';
+          }
+        };
+      }
+
+    </script>
+  </body>
+</html>
