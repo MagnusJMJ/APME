@@ -16,4 +16,7 @@ This repository contains all the programs I have submitted for my weekly mini-ex
 
 [**miniex8** - Rock, Paper, Scissors](https://magnusjmj.github.io/APME/miniex8)
 
+[**miniex9** - The Omniscient Professor](https://magnusjmj.github.io/APME/miniex9)
+
+
 Each program's respective folder contains an in-depth readme along with all assets and source-code.
