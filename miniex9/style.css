@@ -8,11 +8,11 @@
   to   { opacity: 1; }
 }
 body {
+  background-color: #565857;
   padding: 0;
   margin: 0;
 }
 
 p {
   font-size: 14;
-  
 }
