@@ -1,8 +1,8 @@
 # [The Omniscient Professor](https://magnusjmj.github.io/APME/miniex9)
 ### Wolfram Alpha | Short Answer API
 ![Screenshot](https://github.com/MagnusJMJ/APME/blob/master/miniex9/screenshot.png)
-
-*Disclaimer: The professor is not actually omniscient, and might have trouble interpreting some questions. Questions with short, factual answers like "How much does a hammerhead shark weigh?" work fairly well - others, not so much.*
+---
+*Disclaimer: The professor is not actually omniscient, and might have trouble interpreting some questions. Questions with short, factual answers like "What is the first prime number higher than 500?" work fairly well - others, not so much.*
 ---
 ## The API
 For this mini-exercise, I did some virtual window shopping, and decided to try and implement Wolfram Alpha's API.
