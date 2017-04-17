@@ -5,8 +5,9 @@
 **NB!** The Professor is good at questions with short, factual answers, like "How long is the Thames?" or "How much money is
 Apple worth?" - others, not so much. Some questions produce weird answers, others straight up don't work. Experiment!
 Also, there are no other files in this directory, but fret not! All you need is in index.html. :) The program should run
-fine without any bells and whistles, but if it doesn't, you're shit out of luck. Cross-Origin Resource Sharing is a strange
-beast and I don't know how to tame it.
+fine without any bells and whistles, but if it doesn't, ~~you're shit out of luck~~ you might be able to let your browser run
+the "unsafe scripts" in this instance (look in your URL bar). Cross-Origin Resource Sharing is a strange beast and I don't know
+how to tame it.
 
 ## The API
 For this mini-exercise, I did some virtual window shopping, and decided to try and implement Wolfram Alpha's API.
