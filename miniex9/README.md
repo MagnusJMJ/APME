@@ -2,7 +2,7 @@
 ### Wolfram Alpha | Short Answer API
 ![Screenshot](https://github.com/MagnusJMJ/APME/blob/master/miniex9/screenshot.png)
 ---
-NB! The Professor is good at questions with short, factual answers, like "How long is the Thames?" or "How much money is
+**NB!** The Professor is good at questions with short, factual answers, like "How long is the Thames?" or "How much money is
 Apple worth?" - others, not so much. Some questions produce weird answers, others straight up don't work. Experiment!
 Also, there are no other files in this directory, but fret not! All you need is in index.html. :) The program should run
 fine without any bells and whistles, but if it doesn't, you're shit out of luck. Cross-Origin Resource Sharing is a strange
