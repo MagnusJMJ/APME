@@ -53,6 +53,10 @@ files to get a sense of what's going on. Certainly helped when I wrote it!).
         font-weight: bold;
       }
 
+      #throbber {
+        display: none;
+      }
+
       button {
         background-color: #DDC8C4;
         transition: color .25s, background-color .25s;
@@ -79,15 +83,18 @@ files to get a sense of what's going on. Certainly helped when I wrote it!).
     <p>He prefers questions with short and factual answers, though.</p>
     <input id='input' value=''>
     <button onclick='fetchAnswer()'>Ask the Professor</button>
+    <img id='throbber' src="assets/throbber.gif">
     <p id='question'></p>
     <p id='output'></p>
-    <img src='http://vignette3.wikia.nocookie.net/scribblenauts/images/b/b1/Professor.png/revision/latest?cb=20130202214922'>
+    <img src='assets/professor.png'>
     <!-- And I'm not talking about earth wind and fire, haha knowhatimsayin? -->
 
     <!-- Here be JavaScript! Think of this as any other 'miniex.js', but copy-pasted into the index file -->
     <script>
 
       function fetchAnswer() {
+        document.getElementById('throbber').style.display = 'inline-block';
+
         var hack    = 'https://crossorigin.me/', // "The magnitude of this hack compares favorably with that of the national debt".
             url     = 'https://api.wolframalpha.com/v1/result', // The URL of the API we want to access.
             query   = document.getElementById('input').value.replace(/ /g, '+').replace('?', '%3F'), // Voodoo-magic that fetches the value of the textbox and makes spaces and ?'s URL-friendly.
@@ -104,6 +111,7 @@ files to get a sense of what's going on. Certainly helped when I wrote it!).
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById('question').innerHTML = document.getElementById('input').value;
             document.getElementById('output').innerHTML = this.responseText + '.';
+            document.getElementById('throbber').style.display = 'none';
           }
         };
         xhr.onerror = function() {
