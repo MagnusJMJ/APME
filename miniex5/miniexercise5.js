@@ -17,7 +17,7 @@ function setup() {
   grammar = new RiGrammar(causeGen.join('\n'));
 
   // makes a list of people on start-up
-  people = []
+  people = [];
   for (i = 0; i < 100; i++) {
     people[i] = new Person();
   }
